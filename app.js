@@ -1,33 +1,78 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-// jsx transpiled before it reaches the js - Parcel - Babel
+/*
+* - Header
+    -logo
+    -nav-bar
+  -Body
+    -search
+    -restaurant-container
+      -restaurant-card
+        -img
+        -Name of rest
+        -star rating
+        -Cuisine
+        -delivery time
+  -Footer
+    -links
+    -copyright
+*
+*/
 
-// jsx => Babel transpiles it to React.createElement => ReactElement-js Object => HTML element(render)
-// Everything is React is Component
-
-// React Functional component
-
-const HeadingComponent = () => {
-  return <h1>Namaste Functional Component</h1>;
+const Header = () => {
+  return (
+    <div className="header">
+      <div className="logo-container">
+        <img
+          className="logo"
+          src="https://cdn.dribbble.com/users/5462907/screenshots/11960844/media/6ab1a3dfa24d9b88fd20b92746d62c70.png"
+        ></img>
+      </div>
+      <div className="nav-item">
+        <ul>
+          <li>Home</li>
+          <li>About Us</li>
+          <li>Contact Us</li>
+          <li>Cart</li>
+        </ul>
+      </div>
+    </div>
+  );
 };
 
-const Title = () => <h1 className="head">Namaste React using jsx</h1>; //this is react functional component;
-const title = <h2 className="head">Namaste React using JavaScript</h2>; // this is js variable
+const ResCard = () => {
+  return (
+    <div className="res-card">
+      <img className="res-logo" src="https://assets.vogue.com/photos/63d169f727f1d528635b4287/16:9/w_3631,h_2042,c_limit/GettyImages-1292563627.jpg"></img>
+      <h3>Namaste food</h3>
+      <h5>South Indian</h5>
+      <h5>4.4 Star</h5>
+      <h5>35 minutes</h5>
+    </div>
+  );
+};
 
-const number = 10000;
-const HeadingComponent2 = () => (
-  <div>
-    <h2>{console.log("Namaste")}</h2>
-    {Title()}
-    <Title></Title>
-    <Title /> // this is react functional component
-    {title} // you can inject js variable
-    <h1 id="heading">Namaste Functional Component</h1>
-  </div>
-);
+const Body = () => {
+  return (
+    <div className="body">
+      <div className="search">Search</div>
+      <div className="res-container">
+        <ResCard />
+        <ResCard />
+      </div>
+    </div>
+  );
+};
 
-const heading = <h1> this is h1 using jsx </h1>;
+const AppLayout = () => {
+  return (
+    <div className="app">
+      <Header />
+      <Body />
+    </div>
+  );
+};
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<HeadingComponent2 />);
-  
+root.render(<AppLayout />);
