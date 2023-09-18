@@ -1,0 +1,34 @@
+{
+  "name": "1st",
+  "version": "1.0.0",
+  "description": "Learning Namaste React by \"Akshay Saini\"",
+  "scripts": {
+    "start":"parcel index.html",
+    "build":"parcel build index.html",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git remote add origin https://github.com/dhaval1997/Namaste-React.git"
+  },
+  "keywords": [
+    "Namaste",
+    "React",
+    "Learnig",
+    "From",
+    "zero"
+  ],
+  "author": "Akshay Saini",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.9.3",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "browserslist": [
+    "last 3 versions"
+  ]
+}
