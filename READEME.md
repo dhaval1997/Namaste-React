@@ -18,3 +18,27 @@
 - HTTPs
 - Tree Shaking - remove Unused code
 - Different dev and prod bundles
+
+
+# Discription
+
+/*
+* - Header
+    -logo
+    -nav-bar
+    
+  -Body
+    -search
+    -restaurant-container
+      -restaurant-card
+        -img
+        -Name of rest
+        -star rating
+        -Cuisine
+        -delivery time
+
+  -Footer
+    -links
+    -copyright
+*
+*/

@@ -56,3 +56,10 @@
 .res-logo {
   width: 100%;
 }
+
+.filter-btn{
+  cursor: pointer;
+  margin: 10px;
+  background-color: orange;
+  padding: 6px;
+}
