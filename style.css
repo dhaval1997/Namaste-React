@@ -57,9 +57,46 @@
   width: 100%;
 }
 
-.filter-btn{
+.filter-btn {
   cursor: pointer;
   margin: 10px;
   background-color: orange;
   padding: 6px;
 }
+
+.login-btn {
+  cursor: pointer;
+  padding: 5px 15px;
+  background-color: orange;
+  color: black;
+}
+
+.shimmer-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.shimmer-card {
+  margin: 15px;
+  width: 200px;
+  height: 300px;
+  margin: 8px;
+  padding: 5px;
+  background-color: #303030;
+}
+
+.search-btn {
+  cursor: pointer;
+  margin: 10px;
+  background-color: orange;
+  padding: 6px;
+}
+
+input[type=text] {
+  padding: 6px 15px;
+  margin: 8px 10px;
+  border: none;
+  color: #212121;
+  background-color:  orange;
+}
+

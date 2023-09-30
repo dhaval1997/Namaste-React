@@ -1,24 +1,32 @@
-import {LOGO} from "../utils/constants";
+import { useState } from "react";
+import { LOGO } from "../utils/constants";
 
 const Header = () => {
-    return (
-      <div className="header">
-        <div className="logo-container">
-          <img
-            className="logo"
-            src= {LOGO} ></img>
-        </div>
-        <div className="nav-item">
-          <ul>
-            <li>Search</li>
-            <li>Offers</li>
-            <li>Help</li>
-            <li>Sign In</li>
-            <li>Cart</li>
-          </ul>
-        </div>
+  const [onLogIn, setOnClick] = useState("LogIn");
+  return (
+    <div className="header">
+      <div className="logo-container">
+        <img className="logo" src={LOGO}></img>
       </div>
-    );
-  };
+      <div className="nav-item">
+        <ul>
+          <li>Offers</li>
+          <li>Help</li>
+          <li>Cart</li>
+          <li>
+            <button
+              className="login-btn"
+              onClick={() => {
+                onLogIn == "LogIn" ? setOnClick("LogOut") : setOnClick("LogIn");
+              }}
+            >
+              {onLogIn}
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  );
+};
 
-  export default Header;
+export default Header;
