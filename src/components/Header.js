@@ -8,7 +8,7 @@ const Header = () => {
       <div className="logo-container">
         <img className="logo" src={LOGO}></img>
       </div>
-      <div className="nav-item">
+      <div className="nav-items">
         <ul>
           <li>Offers</li>
           <li>Help</li>
@@ -30,3 +30,5 @@ const Header = () => {
 };
 
 export default Header;
+
+

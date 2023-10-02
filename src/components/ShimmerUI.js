@@ -1,23 +1,14 @@
+import React from "react";
+
 const Shimmer = () => {
   return (
-    <>
-      <div className="shimmer-container">
-        <div className="shimmer-card"></div>
-        <div className="shimmer-card"></div>
-        <div className="shimmer-card"></div>
-        <div className="shimmer-card"></div>
-        <div className="shimmer-card"></div>
-        <div className="shimmer-card"></div>
-        <div className="shimmer-card"></div>
-        <div className="shimmer-card"></div>
-        <div className="shimmer-card"></div>
-        <div className="shimmer-card"></div>
-        <div className="shimmer-card"></div>
-        <div className="shimmer-card"></div>
-        <div className="shimmer-card"></div>
-        <div className="shimmer-card"></div>
-      </div>
-    </>
+    <div className="shimmer-container">
+      {Array(10)
+        .fill("")
+        .map((e, index) => (
+          <div className="shimmer-card" key={index}></div>
+        ))}
+    </div>
   );
 };
 
