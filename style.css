@@ -1,102 +1,181 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
 * {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-family: 'Roboto', sans-serif;
+  color: #404040;
 }
 
-.nav-item > ul {
+.nav-items > ul {
   display: flex;
   list-style-type: none;
-  color: orange;
+  justify-content: space-evenly;
   font-size: large;
 }
 
-.nav-item > ul > li {
-  margin: 30px 10px;
+.nav-items > ul > li {
   padding: 10px;
+  cursor: pointer;
 }
 
 .header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  height: 80px;
+  border-radius: 5px;
   margin: 10px;
-  padding: 8px;
+  padding: 10px;
   border: 1px solid orange;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+    rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
 }
 
 .logo {
-  height: 100px;
-  color: orange;
+  padding: 10px;
+  width: 100px;
 }
 
 .res-container {
+  width: auto;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .res-card {
   margin: 15px;
-  width: 200px;
-  /* height: 200px; */
-  margin: 5px;
-  padding: 5px;
+  width: 240px;
+  margin: 10px;
+  padding: 8px;
+  border-radius: 10px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  transition: transform 0.2s;
 }
 
 .res-card:hover {
-  color: orange;
-  border: 1px solid orange;
+  transform: scale(1.05);
   cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  color: rgb(75, 75, 75);
 }
 
 .search {
   padding: 10px;
 }
 
-.res-logo {
+.res-card > img {
   width: 100%;
+  border-radius: 10px;
+  height: 200px;
 }
 
 .filter-btn {
   cursor: pointer;
-  margin: 10px;
+  margin-left: 15px;
+  color: white;
   background-color: orange;
-  padding: 6px;
+  padding: 5px 15px;
+  border: none;
+  border-radius: 5px;
 }
 
 .login-btn {
   cursor: pointer;
   padding: 5px 15px;
   background-color: orange;
-  color: black;
+  color: white;
+  border: none;
+  display: flex;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.login-btn:hover,
+.filter-btn:hover,
+.search-btn:hover {
+  outline: 0;
+  background: #f4f4f4;
+  color: orange;
+  font-weight: bolder;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 }
 
 .shimmer-container {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .shimmer-card {
-  margin: 15px;
-  width: 200px;
+  width: 240px;
+  margin: 10px;
   height: 300px;
-  margin: 8px;
-  padding: 5px;
-  background-color: #303030;
+  padding: 8px;
+  border-radius: 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 
 .search-btn {
   cursor: pointer;
   margin: 10px;
+  color: white;
   background-color: orange;
-  padding: 6px;
+  padding: 5px 15px;
+  border: none;
+  border-radius: 5px;
 }
 
-input[type=text] {
+input[type="text"] {
+  box-sizing: border-box;
   padding: 6px 15px;
   margin: 8px 10px;
   border: none;
   color: #212121;
-  background-color:  orange;
+  box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.08);
+  outline: none;
 }
 
+/* CSS for mobile devices */
+@media only screen and (max-width: 470px) {
+  .header {
+    height: 60px;
+  }
+  .header .logo {
+    width: 80px;
+  }
+  .nav-items > ul > li {
+    font-size: small;
+  }
+  .nav-items > ul > li .logout-btn,
+  .nav-items > ul > li .login-btn {
+    font-size: xx-small;
+  }
+  .search-container {
+    margin: 80px auto 0px;
+  }
+}
+@media only screen and (max-width: 350px) {
+  .header {
+    height: 50px;
+  }
+  .header .logo {
+    width: 70px;
+  }
+  .nav-items > ul > li {
+    font-size: x-small;
+  }
+  .nav-items > ul > li .login-btn {
+    padding: 5px;
+  }
+  .search-container {
+    margin: 70px auto 0px;
+  }
+}
