@@ -28,9 +28,9 @@
   width: 100vw;
   height: 80px;
   border-radius: 5px;
-  margin: 10px;
+  margin: 8px;
   padding: 10px;
-  border: 1px solid orange;
+  border-bottom: 1px solid orange;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
     rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
 }
@@ -138,12 +138,12 @@
   background-color: orange;
   padding: 5px 15px;
   border: none;
+  padding: 6px 15px;
   border-radius: 5px;
 }
 
 input[type="text"] {
   box-sizing: border-box;
-  padding: 6px 15px;
   margin: 8px 10px;
   color: #212121;
   box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.08);
@@ -151,26 +151,27 @@ input[type="text"] {
 }
 
 /* Responsive layout */
-.about-us, .contact-us {
+.about-us,
+.contact-us {
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
 }
 
 /* Center align text and elements */
-h1 {
+.head {
   text-align: center;
   font-size: 36px;
   margin-bottom: 20px;
 }
 
-p {
+.pera {
   font-size: 18px;
   line-height: 1.5;
   margin-bottom: 20px;
-} 
+}
 
-/* form {
+form {
   display: flex;
   flex-direction: column;
 }
@@ -185,13 +186,13 @@ label {
   font-weight: bold;
 }
 
-input, textarea {
-  width: 100%;
+input,
+textarea {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 16px;
-  outline: none;  
+  outline: none;
   box-sizing: border-box;
   padding: 6px 15px;
   margin: 8px 10px;
@@ -217,7 +218,6 @@ button[type="submit"]:hover {
   background-color: #0056b3;
 }
 
-
 /* Add padding to the sides on smaller screens */
 @media (max-width: 768px) {
   .about-us {
@@ -235,7 +235,6 @@ button[type="submit"]:hover {
     font-size: 16px;
   }
 }
-
 
 /* CSS for mobile devices */
 @media only screen and (max-width: 470px) {
@@ -269,7 +268,7 @@ button[type="submit"]:hover {
   .nav-items > ul > li .login-btn {
     padding: 5px;
   }
-  .filter-search{
+  .filter-search {
     margin: 70px auto 0px;
   }
 }

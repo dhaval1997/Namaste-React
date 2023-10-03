@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import ResCard from "./ResCard";
 import { CDN_DATA } from "../utils/constants";
 import Shimmer from "./ShimmerUI";
+import { Link } from "react-router-dom";
+
 
 const Body = () => {
   const [listOfRestaurant, setlistOfRestaurant] = useState([]);
@@ -19,7 +21,7 @@ const Body = () => {
       console.log(json);
 
       const cdnListData =
-        json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle
+        json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
           ?.restaurants;
 
       setlistOfRestaurant(cdnListData);
@@ -65,7 +67,7 @@ const Body = () => {
       </div>
       <div className="res-container">
         {filtered.map((restaurant) => (
-          <ResCard key={restaurant.info.id} resData={restaurant} />
+          <Link key={restaurant.info.id} to={"restaurants/"+restaurant.info.id}><ResCard resData={restaurant} /></Link>
         ))}
       </div>
     </div>

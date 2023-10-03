@@ -1,23 +1,25 @@
 import { useState } from "react";
 import { LOGO } from "../utils/constants";
+import { Link } from "react-router-dom";
 
 const Header = () => {
-  const [onLogIn, setOnClick] = useState("LogIn");
+  const [onLogIn, setOnLogIn] = useState("LogIn");
   return (
     <div className="header">
       <div className="logo-container">
-        <img className="logo" src={LOGO}></img>
+        <Link to="/"><img className="logo" src={LOGO}></img></Link>
       </div>
       <div className="nav-items">
         <ul>
-          <li>Offers</li>
-          <li>Help</li>
+          <li><Link to="/about">About US</Link></li>
+          <li><Link to="/contact">Contact US</Link></li>
+          <li><Link>Help</Link></li>
           <li>Cart</li>
           <li>
             <button
               className="login-btn"
               onClick={() => {
-                onLogIn == "LogIn" ? setOnClick("LogOut") : setOnClick("LogIn");
+                onLogIn == "LogIn" ? setOnLogIn("LogOut") : setOnLogIn("LogIn");
               }}
             >
               {onLogIn}
