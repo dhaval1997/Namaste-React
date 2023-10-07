@@ -1,29 +1,13 @@
-import React, { useEffect, useState } from "react";
-import { CDN_RES_INFO } from "../utils/constants";
+import React from "react";
 import Shimmer from "./ShimmerUI";
 import { useParams } from "react-router-dom";
+import {useRestaurant} from "../utils/useRestaurant";
 
 const RestaurantInfo = () => {
   const { resId } = useParams();
-  const [restaurantInfo, setRestaurantInfo] = useState(null);
 
-  useEffect(() => {
-    const getInfo = async () => {
-      try {
-        const response = await fetch(CDN_RES_INFO + resId);
-        if (!response.ok) {
-          throw new Error("Failed to fetch restaurant info");
-        }
-        const json = await response.json();
-        setRestaurantInfo(json);
-        console.log(json);
-      } catch (error) {
-        console.error("Error fetching restaurant info:", error);
-      }
-    };
-    getInfo();
-  }, [resId]); // Include resId in the dependency array
-
+  const restaurantInfo = useRestaurant(resId)
+  
   if (restaurantInfo === null) {
     return <Shimmer />;
   }
@@ -39,7 +23,6 @@ const RestaurantInfo = () => {
     avgRating,
     costForTwoMessage,
     cuisines,
-    id,
     sla: { deliveryTime },
   } = restaurantDetails;
 
@@ -48,16 +31,17 @@ const RestaurantInfo = () => {
       <h1>{name}</h1>
       <p>{cuisines.join(", ")}</p>
       <h5>
-        {costForTwoMessage} - {avgRating} - {deliveryTime}
+        {costForTwoMessage} ----- {"⭐ "+avgRating} ----- {deliveryTime}
       </h5>
       <ul className="res-menu">
         {itemCards.map((item) => (
-          <li key={item.card.info.id}>
+          <div className="res-menu-list" key={item.card.info.id}>
             <br />
             {item?.card?.info?.name} - Rs.{(item?.card?.info?.price || item?.card?.info?.defaultPrice ||0) / 100}{" "}
             <br />
             {item?.card?.info?.description}
-          </li>
+            {/* <img className="" src={CDN_RES_MENU_IMG+item.card.info.imageId}></img> */}
+          </div>
         ))}
       </ul>
     </div>

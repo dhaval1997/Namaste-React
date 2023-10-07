@@ -3,11 +3,12 @@ import ResCard from "./ResCard";
 import { CDN_DATA } from "../utils/constants";
 import Shimmer from "./ShimmerUI";
 import { Link } from "react-router-dom";
+import { useOnline } from "../utils/useOnline";
 
 
 const Body = () => {
-  const [listOfRestaurant, setlistOfRestaurant] = useState([]);
   const [searchText, setSearchText] = useState("");
+  const [listOfRestaurant, setlistOfRestaurant] = useState([]);
   const [filtered, setFiltered] = useState([]);
 
   useEffect(() => {
@@ -30,6 +31,13 @@ const Body = () => {
       (err) => console.error(err);
     }
   };
+
+  let isOnline = useOnline();
+  if(!isOnline){
+    return (
+      <h1>Offline, Please check your Internet Connection</h1>
+    )
+  }
 
   return listOfRestaurant.length === 0 ? (
     <Shimmer />
@@ -67,7 +75,7 @@ const Body = () => {
       </div>
       <div className="res-container">
         {filtered.map((restaurant) => (
-          <Link key={restaurant.info.id} to={"restaurants/"+restaurant.info.id}><ResCard resData={restaurant} /></Link>
+          <Link style={{textDecoration:"none"}} key={restaurant.info.id} to={"restaurants/"+restaurant.info.id}><ResCard resData={restaurant} /></Link>
         ))}
       </div>
     </div>

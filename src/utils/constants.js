@@ -9,3 +9,8 @@ export const CDN_DATA =
 
 export const CDN_RES_INFO =
   "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=21.2634108&lng=72.88699299999999&restaurantId=";
+
+export const CDN_RES_MENU_IMG =
+  "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/";
+
+export const GIT_API = "https://api.github.com/users/dhaval1997";
