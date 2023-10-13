@@ -1,12 +1,12 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap");
 
 * {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
-  font-family: "Roboto", sans-serif;
-  color: #404040;
-  background: #f5f5f5;
+  font-family: "Poppins", sans-serif;
+  color: #282727;
+  background: #fbfbfb;
 }
 
 .nav-items > ul {
@@ -14,12 +14,15 @@
   list-style-type: none;
   justify-content: space-evenly;
   font-size: large;
+  color: #a73121;
+  padding: 20px;
 }
 
 .nav-items > ul > li {
   list-style-type: none;
   padding: 10px;
   cursor: pointer;
+  color: #a73121;
 }
 
 .header {
@@ -28,43 +31,59 @@
   align-items: center;
   width: 100vw;
   height: 80px;
+  color: #a73121;
   border-radius: 5px;
-  margin: 8px;
+  margin: 0px 8px;
+  margin-bottom: 10px;
   padding: 10px;
-  border-bottom: 1px solid orange;
+  border-bottom: 1px solid #a73121;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
     rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
-  overflow: hidden;
+  z-index: 999;
+  overflow-y: hidden;
+  /* top: 0; */
+  /* left: 0; */
+  /* position: fixed; */
 }
 
 .logo {
+  margin: 0px 40px;
   padding: 10px;
   width: 100px;
+  color: #a73121;
 }
 
 .res-container {
-  width: auto;
   display: flex;
+  min-height: 67vh;
   flex-wrap: wrap;
   justify-content: center;
+  margin: auto;
+  width: 80%;
 }
 
 .res-card {
   margin: 15px;
-  width: 240px;
-  margin: 10px;
+  width: 250px;
   padding: 8px;
-  border-radius: 10px;
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
-    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-  transition: transform 0.1s;
+  border-radius: 15px;
+  /* box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px; */
+  transition: transform 0.2s;
 }
 
 .res-card:hover {
   transform: scale(1.08);
   cursor: pointer;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-  color: rgb(75, 75, 75);
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  /* box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  color: rgb(75, 75, 75); */
+}
+
+.res-card p {
+  font-size: small;
+  font-weight: 300;
 }
 
 .rating {
@@ -81,15 +100,18 @@
 
 .res-card > img {
   width: 100%;
-  border-radius: 10px;
-  height: 200px;
+  border-radius: 15px;
+  height: 160px;
+  object-fit: cover;
 }
 
 .filter-btn {
   cursor: pointer;
-  margin-left: 15px;
+  /* margin-left: 60px; */
+  margin-left: 15%;
+  /* margin-right: 15px; */
   color: white;
-  background-color: orange;
+  background-color: #a73121;
   padding: 5px 15px;
   border: none;
   border-radius: 5px;
@@ -98,7 +120,7 @@
 .login-btn {
   cursor: pointer;
   padding: 5px 15px;
-  background-color: orange;
+  background-color: #a73121;
   color: white;
   border: none;
   display: flex;
@@ -111,13 +133,15 @@
 .search-btn:hover {
   outline: 0;
   background: #f4f4f4;
-  color: orange;
+  color: #a73121;
   font-weight: bolder;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
     rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 }
 
 .shimmer-container {
+  width: 80%;
+  margin: auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -137,7 +161,7 @@
   cursor: pointer;
   margin: 10px;
   color: white;
-  background-color: orange;
+  background-color: #a73121;
   padding: 5px 15px;
   border: none;
   padding: 6px 15px;
@@ -154,15 +178,20 @@ input[type="text"] {
 
 /* Style for the restaurant info container */
 .res-info {
-  max-width: 800px;
-  margin: 0 auto;
+  min-height: 74vh;
+  margin: auto;
+  width: 60%;
   padding: 20px;
-  background-color: #f7f7f7;
+  background-color: #fbfbfb;
   border: 1px solid #ddd;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+.res-info-name{
+  margin: 10px 0px 30px 0px;
+  border-bottom: 1px solid #5c5c5c;
+}
 /* Style for the restaurant name */
 .res-info h1 {
   font-size: 24px;
@@ -185,10 +214,32 @@ input[type="text"] {
 
 /* Style for the menu items */
 .res-menu-list {
+  display: flex;
+  justify-content: space-between;
   list-style: none;
   margin: 10px 0;
   font-size: 16px;
   color: #444;
+}
+
+.res-menu-list-img {
+  display: flex;
+  justify-content: space-between;
+  justify-content: center;
+}
+
+.res-menu-item-btn {
+  background-color: #a73121;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 20px;
+  cursor: pointer;
+  font-size: 10px;
+  transition: background-color 0.3s;
+  align-self: flex-end;
+  position: absolute;
+
 }
 
 /* Add a horizontal line between menu items */
@@ -198,9 +249,18 @@ input[type="text"] {
 }
 
 .res-menu-list img {
-  width: 100px;
-  height: 80px;
-  justify-content: end;
+  width: 120px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.res-menu-list span {
+  font-weight: 800;
+}
+
+.item-catagory {
+  justify-content: space-between;
 }
 
 @keyframes shimmer {
@@ -215,8 +275,9 @@ input[type="text"] {
 /* Responsive layout */
 .about-us,
 .contact-us {
-  max-width: 800px;
-  margin: 0 auto;
+  min-height: 74vh;
+  width: 75%;
+  margin: auto;
   padding: 20px;
 }
 
@@ -265,7 +326,7 @@ textarea {
 
 /* Style submit button */
 button[type="submit"] {
-  background-color: #007bff;
+  background-color: #a73121;
   color: #fff;
   border: none;
   border-radius: 4px;
@@ -277,7 +338,46 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-  background-color: #0056b3;
+  background-color: #a73121d5;
+}
+
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  width: 100%;
+  text-align: center;
+  padding: 20px 10px 20px;
+  border-radius: 5px;
+  box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.71);
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.footer > i {
+  padding: 0 5px 0;
+  font-size: smaller;
+}
+
+.footer > a {
+  font-weight: 700;
+  color: #a73121;
+}
+
+.footer > a:hover {
+  color: rgb(40, 40, 40);
+}
+
+.fa-heart {
+  color: darkred;
+}
+
+.footer > strong {
+  padding-left: 5px;
+  color: #a73121;
 }
 
 /* Add padding to the sides on smaller screens */

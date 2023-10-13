@@ -6,17 +6,15 @@ import ContactUs from "./components/ContactUs";
 import AboutUs from "./components/AboutUS";
 import Error from "./components/Error";
 import RestaurantInfo from "./components/RestaurantInfo";
-import {
-  Outlet,
-  RouterProvider,
-  createBrowserRouter,
-} from "react-router-dom";
+import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
+import Footer from "./components/Footer";
 
 const AppLayout = () => {
   return (
     <div className="app">
       <Header />
       <Outlet />
+      <Footer />
     </div>
   );
 };

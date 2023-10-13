@@ -15,10 +15,10 @@ const ResCard = (props) => {
   return (
     <div className="res-card">
       <img className="res-logo" src={CDN_IMG + cloudinaryImageId}></img>
-      <h3>{name}</h3>
-      <h5>{cuisines.join(", ")}</h5>
-      <h5>{areaName}</h5>
-      <h5>{costForTwo}</h5>
+      <h4>{name}</h4>
+      <p>{cuisines.join(", ")}</p>
+      <p>{areaName}</p>
+      <p>{costForTwo}</p>
       <div className="rating">
         <h5>{"⭐ " + avgRating || avgRatingString}</h5>
         <h5>-</h5>

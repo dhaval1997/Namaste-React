@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { CDN_RES_INFO } from "./constants";
+import { CDN_RES_INFO } from "../utils/constants";
 
 
 export const useRestaurant = (resID) =>{
@@ -14,7 +14,6 @@ export const useRestaurant = (resID) =>{
         }
         const json = await response.json();
         setRestaurantInfo(json);
-        console.log(json);
       } catch (error) {
         console.error("Error fetching restaurant info:", error);
       }

@@ -1,14 +1,14 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import ResCard from "./ResCard";
-import { CDN_DATA } from "../utils/constants";
 import Shimmer from "./ShimmerUI";
 import { Link } from "react-router-dom";
-import { useOnline } from "../utils/useOnline";
-
+import { CDN_DATA } from "../utils/constants";
+import { useOnline } from "../Hooks/useOnline";
 
 const Body = () => {
   const [searchText, setSearchText] = useState("");
   const [listOfRestaurant, setlistOfRestaurant] = useState([]);
+  let isOnline = useOnline();
   const [filtered, setFiltered] = useState([]);
 
   useEffect(() => {
@@ -19,63 +19,73 @@ const Body = () => {
     try {
       const data = await fetch(CDN_DATA);
       const json = await data.json();
-      console.log(json);
 
       const cdnListData =
         json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
           ?.restaurants;
 
+          console.log(cdnListData);
       setlistOfRestaurant(cdnListData);
       setFiltered(cdnListData);
     } catch {
-      (err) => console.error(err);
+      console.error(err);
     }
   };
 
-  let isOnline = useOnline();
-  if(!isOnline){
-    return (
-      <h1>Offline, Please check your Internet Connection</h1>
-    )
+  if (!isOnline) {
+    return <h1>Offline, Please check your Internet Connection</h1>;
   }
+
+  const filteredHandler = () => {
+    const filteredList = listOfRestaurant.filter(
+      (res) => res.info.avgRating > 4
+    );
+    setFiltered(filteredList);
+  };
+
+  const searchRestaurants = () => {
+    const searchedRestaurant = listOfRestaurant.filter((res) =>
+      res.info.name.toLowerCase().includes(searchText.toLowerCase())
+    );
+    setFiltered(searchedRestaurant);
+  };
+
+  const handleSearchInputChange = (e) => {
+    const searchQuery = e.target.value.toLowerCase();
+    const searchedRestaurant = listOfRestaurant.filter((res) =>
+      res.info.name.toLowerCase().includes(searchQuery)
+    );
+    setFiltered(searchedRestaurant);
+    setSearchText(searchQuery);
+  };
 
   return listOfRestaurant.length === 0 ? (
     <Shimmer />
   ) : (
     <div className="body">
       <div className="filter-search">
-        <button
-          className="filter-btn"
-          onClick={() => {
-            const filteredList = listOfRestaurant.filter(
-              (res) => res.info.avgRating > 4
-            );
-            setFiltered(filteredList);
-          }}
-        >
+        <button className="filter-btn" onClick={filteredHandler}>
           Top Rated Restaurant
         </button>
         <input
           type="text"
           placeholder="Search Restaurant here.."
           value={searchText}
-          onChange={(e) => setSearchText(e.target.value)}
+          onChange={handleSearchInputChange}
         ></input>
-        <button
-          className="search-btn"
-          onClick={() => {
-            const searchedRestaurant = listOfRestaurant.filter((res) =>
-              res.info.name.toLowerCase().includes(searchText.toLowerCase())
-            );
-            setFiltered(searchedRestaurant);
-          }}
-        >
+        <button className="search-btn" onClick={searchRestaurants}>
           Search
         </button>
       </div>
       <div className="res-container">
         {filtered.map((restaurant) => (
-          <Link style={{textDecoration:"none"}} key={restaurant.info.id} to={"restaurants/"+restaurant.info.id}><ResCard resData={restaurant} /></Link>
+          <Link
+            style={{ textDecoration: "none" }}
+            key={restaurant.info.id}
+            to={"restaurants/" + restaurant.info.id}
+          >
+            <ResCard resData={restaurant} />
+          </Link>
         ))}
       </div>
     </div>

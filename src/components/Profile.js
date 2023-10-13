@@ -25,6 +25,8 @@ class Profile extends React.Component {
       <>
         <h2>Name: {this.state.userInfo.name}</h2>
         <h3>Location: {this.state.userInfo.location}</h3>
+        <h3>twitter: {this.state.userInfo.twitter_username}</h3>
+
       </>
     );
   }

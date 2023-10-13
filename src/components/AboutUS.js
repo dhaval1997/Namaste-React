@@ -1,4 +1,4 @@
-import {Component} from "react";
+import { Component } from "react";
 import Profile from "./Profile";
 
 class AboutUS extends Component {
