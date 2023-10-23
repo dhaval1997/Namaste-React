@@ -2,8 +2,6 @@
 
 # Cravings - A Swiggy Clone
 
-![Cravings](https://your-image-url-here.com)
-
 Cravings is a food ordering web application that allows users to browse live restaurant data, explore menus, add items to the cart, and enjoy a seamless online food ordering experience. It's a project inspired by the popular online food delivery platform Swiggy, developed during the 'Namaste React' Course by Akshay Saini.
 
 ## Key Features and Functionalities
@@ -30,7 +28,7 @@ Cravings is a food ordering web application that allows users to browse live res
 
 ## Demo
 
-Explore the project by visiting the [Cravings Web Application](https://vercel.com/dhaval-prajapatis-projects/swiggy-clone/4hbCruqoXcV8RZnK9RuYaq5oN1xy).
+Explore the project by visiting the [Namaste Food](https://swiggy-clone-csuyjllnc-dhaval-prajapatis-projects.vercel.app).
 
 ## Installation
 
@@ -38,7 +36,6 @@ To run this project locally, follow these steps:
 
 1. Clone the repository.
 
-```bash
 git clone https://github.com/your-username/cravings.git
 
 2. Install the necessary dependencies.
